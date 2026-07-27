@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://cy2noo34l33ep"]
+
+[ext_resource type="PackedScene" uid="uid://d2tcpd4pbh6d4" path="res://scenes/monkey.tscn" id="1_vipc8"]
+[ext_resource type="Script" uid="uid://ba0l75y6je580" path="res://scripts/fast_monkey.gd" id="2_56o8c"]
+[ext_resource type="Texture2D" uid="uid://uck44wx2fesi" path="res://assets/sprite/fast_monkey.png" id="2_lunhx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56o8c"]
+atlas = ExtResource("2_lunhx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtm1r"]
+atlas = ExtResource("2_lunhx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgs5s"]
+atlas = ExtResource("2_lunhx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05inh"]
+atlas = ExtResource("2_lunhx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbk00"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56o8c")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtm1r")
+}],
+"loop": true,
+"name": &"grab",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgs5s")
+}],
+"loop": true,
+"name": &"thrown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05inh")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[node name="Fast_Monkey" instance=ExtResource("1_vipc8")]
+script = ExtResource("2_56o8c")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_gbk00")
+animation = &"up"
