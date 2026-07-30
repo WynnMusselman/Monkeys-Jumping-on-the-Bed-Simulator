@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://byxxfapak5nd7"]
+
+[ext_resource type="AudioStream" uid="uid://umhvthk3y8xr" path="res://assets/sound/Monkey Business (1).wav" id="1_0rulj"]
+
+[node name="background music" type="AudioStreamPlayer"]
+stream = ExtResource("1_0rulj")
+volume_db = 1.0
+autoplay = true
